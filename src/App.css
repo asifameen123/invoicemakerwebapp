@@ -1,0 +1,64 @@
+.app-container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.invoice-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .invoice-layout {
+    grid-template-columns: 450px 1fr;
+    align-items: start;
+  }
+
+  .invoice-editor {
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Scrollbar styling for editor */
+.invoice-editor::-webkit-scrollbar {
+  width: 6px;
+}
+
+.invoice-editor::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.invoice-editor::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+@media print {
+  .app-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .invoice-layout {
+    display: block;
+  }
+
+  .preview-wrapper {
+    width: 100%;
+  }
+}
